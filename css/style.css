@@ -1,0 +1,198 @@
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    background: url(../img/pastar.jpg);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.todo{
+    text-align: center;
+    font-size: 70px;
+    margin: 0;
+}
+.inp_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding:4px 15px 4px;
+    border-bottom: 1px dashed #A2A2A2
+}
+
+#tasker{
+    background: #fff;   
+}
+.common{
+    width: 70%;
+    margin: auto;
+    flex: 1 0 auto;
+}
+.to_do_items{
+    list-style: none;
+    padding: 0px;
+    margin: auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 9px 0px -5px rgba(149,132,124,1);
+}
+.to_do_items:after{ 
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    bottom: -7px;
+    width: calc(100% - 20px);
+    height: 4px;
+    background: #95847C;
+}
+.inp_area input[type="text"]::-webkit-input-placeholder{
+    color: #B3B3B3;
+    font-size: 25px;
+}
+.inp_area input[type="text"]{
+    font-size: 25px;
+    padding: 25px;
+    width: 90%;
+    border: none;
+    border-left: 2px solid #95847C;
+    outline: none;
+}
+.fa-close{
+    display: none;
+    cursor: pointer;
+    font-size:27px; 
+    position: absolute;
+    right: 0;
+    top: -2px;
+}
+.to_do_items li{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px dotted #A2A2A2;
+}
+.to_do_items li:last-child{
+    border-bottom: 5px solid #95847C;
+}
+.to_do_items li:hover span.done-false .fa-close{
+    display: inline-block;
+    float: right;
+    font-size:27px; 
+}
+span.done-false {
+    display: block;
+    width:100%;
+    position: relative;
+    font-size: 25px;
+}
+span.done-true {
+    text-decoration: line-through;
+    font-family: initial;
+    color: #666;
+    display: block;
+    width:100%;
+    position: relative;
+    font-size: 25px;
+}
+span[contentEditable="true"] {
+    background: gray;
+    padding: 3px;
+}
+.active, .active_rem {
+  display: none;
+}
+input[type="checkbox"]{
+    display: none;
+}
+.iska-true{
+    background-image: url(../img/sdfsdf.png);
+    background-position: 379px 350px !important;
+}
+.iska_com-true{
+    background-image: url(img/sdfsdf.png);
+    background-position: 449px 290px !important;
+    width: 70px !important;
+    height: 50px !important;
+}
+.iska_com-false{
+    background-image: url(../img/sdfsdf.png);
+    background-position: 453px 215px !important;
+    width: 70px !important;
+    height: 50px !important;
+}
+.iska{
+    cursor: pointer;
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    background-image: url(../img/sdfsdf.png);
+    /*background-position: 380px 350px;*/
+    background-position: 380px 136px;
+}
+.gic{
+    height: 20px;
+    background: url(../img/gic.jpg);
+    background-position: right;
+    background-size: cover;
+}
+.remote p{
+    margin: 0;
+}
+.remote{
+    width: 95%;
+    padding: 3px 10px;
+    margin:10px auto;
+    background: #CBCBCB;
+    box-shadow: 0px 3px 0px 0px rgba(182,180,182,1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Bounce Out */
+.hvr-bounce-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+    padding:5px 10px;
+    background: rgba(0,0,0,0.4);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+.hvr-bounce-out:hover, .hvr-bounce-out:focus, .hvr-bounce-out:active {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+.my_foot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #95847C;
+    padding: 10px;
+}
+.my_foot img{
+    max-width: 40px;
+    border-radius: 50%;
+    margin-right: 20px
+}
+i.fa-heart{
+    color: red;
+}
+/*.box_remove{
+    display: none;
+}
+#triger:checked + .box_remove{
+    display: block !important;
+}*/

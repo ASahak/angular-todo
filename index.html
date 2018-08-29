@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel="shortcut icon" href="img/fav.jpg" type="image/x-icon">
+        
+    </head>
+    <body ng-app="myApp">
+        <div ng-controller="myCtrl" class="common">
+            <h1 class="todo">todos</h1>
+                <p class="gic"></p>
+            <div class="inp_area">
+                <label><input type="checkbox" ng-click="checkAll()" ng-model="ptishka">
+                    <span class="iska iska_com-{{selectAll}}"></span>
+                </label>
+                <input type="text" ng-model="task" ng-keyup="searchEnter()" class="to" placeholder="What needs to be done?">
+            </div>
+            <div id="tasker">
+                <ul class="to_do_items" ng-class="{'active': isActive}">
+                    <li ng-repeat="item in tasks track by $index">
+                        <label><input type="checkbox" ng-model="item.status" ng-click="trigger($event)">
+                        <span class="iska iska-{{item.status}}"></span></label>
+                        <span contenteditable="false" ng-keydown="enterAgain(item.oneTask)" ng-dblclick="edit(item.oneTask)" ng-model="item.oneTask" class="done-{{item.status}}">
+                        {{item.oneTask}}
+                        <i class="fa fa-close" ng-click="del(item)"></i>
+                        </span>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="remote">
+                <p>List Item {{count}}</p>
+                <span>
+                    <button ng-click="complate()" class="hvr-bounce-out" ng-disabled="isdis">{{comp_act}}</button>
+                    <button ng-click="remove_selected()" ng-show="selectAll" class="hvr-bounce-out" >Clear {{clear_item}} items</button>
+                </span>    
+            </div>
+        </div>
+        <footer>
+            <div class="my_foot">
+                <img src="img/IMG_20170830_140350_280.jpg">
+                <div class="made">
+                    <p>Made in <i class="fa fa-heart"></i> by Junior Angular2 JS Developer <b>Arthur Sahakyan</b></p>
+                </div>
+            </div>    
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="js/config.js"></script> 
+        <script src="js/app.js"></script> 
+    </body>
+</html>    
